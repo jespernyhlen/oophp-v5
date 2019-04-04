@@ -4,7 +4,7 @@ views:
         region: sidebar-right
         template: anax/v2/block/default
         data:
-            meta: 
+            meta:
                 type: single
                 route: block/om-kursrepo
 
@@ -12,7 +12,7 @@ views:
         region: sidebar-right
         template: anax/v2/block/default
         data:
-            meta: 
+            meta:
                 type: single
                 route: block/om-redovisa
 ---
@@ -21,8 +21,10 @@ Om
 
 Detta innehåll är skrivet i markdown och du hittar innehållet i filen `content/om.md`.
 
-Skriv några kloka ord om kursen?
+Detta är min me/redovisnings-sida i kursen "oophp (v5)" och  handlar om objekt-orienterad programmering i PHP.
 
-Lägg till en fin och representativ bild för kursen, enligt ditt eget val.
+Vi använder oss utav ramverket Anax.
 
-[FIGURE src=image/car.png?w=740&filter=grayscale&f1=colorize,0,30,0,0 caption="En fin bil som demobild, lite oklart hur den är representativ, men ändå..."]
+Under tiden som jag arbetar igenom kursmomenten kommer denna sida ständigt att uppdateras för att bli mer personlig och förbättrad.
+
+[FIGURE src=image/php-logo.png?w=500&f1=colorize,0,30,0,0 caption=""]

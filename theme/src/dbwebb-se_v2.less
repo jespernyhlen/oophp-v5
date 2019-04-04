@@ -186,6 +186,8 @@ img.responsive {
 @import "layout/layout_v2.less";
 @import "layout/dbwebb-se_v2.less"; // Rearrange and move classic style to layout.less
 @import "layout/regions.less";
+@import "layout/custom.less";
+
 
 
 
@@ -196,19 +198,22 @@ img.responsive {
 }
 
 .site-logo-text {
-    font-family: @fontFamilySiteLogo;
-    padding-left: 0.2em;
+    font-family: @fontFamilyMyriadPro;
+    padding: 0.2em;
+    font-size: 31px;
+    line-height: 1;
+    text-shadow: 1px -1px 1px #eee;
 }
 
 .rm-navbar {
     text-align: center;
-    font-family: @fontFamilyCambria;
-    font-size: 1.5em;
+    font-family: @fontFamilyHelveticaNeue;
+    font-size: 1.3em;
     line-height: 0;
 }
 
 .rm-menu-button {
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .rm-desktop li ul {
@@ -229,7 +234,7 @@ img.responsive {
 @bgColorBody: #fff;
 @colorBody:   #111;
 
-@fontFamilyHeadings: @fontFamilyCambria;
+@fontFamilyHeadings: @fontFamilyMyriadPro;
 @fontFamilyBody:     @fontFamilyVerdana;
 @fontFamilyCode:     @fontFamilyCourier;
 

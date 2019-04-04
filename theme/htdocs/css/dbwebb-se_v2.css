@@ -5203,7 +5203,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Cambria, Georgia, Times, 'Times New Roman', serif;
+  font-family: MyriadPro-Regular, "Myriad Pro Regular", MyriadPro, 'Myriad Pro', Helvetica, Arial, sans-serif;
   margin-top: 24px;
   margin-bottom: 24px;
 }
@@ -5493,7 +5493,7 @@ img {
  * and other regions of the page including route specific styles.
  */
 /** ==============================================================
- * Horisontal grid setup 
+ * Horisontal grid setup
  */
 .inner-wrap {
   margin-right: auto;
@@ -5517,7 +5517,7 @@ img {
   clear: both;
 }
 /** ==============================================================
- * Header 
+ * Header
  */
 /*
 .site-header {
@@ -5967,7 +5967,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   width: 73.95833333%;
   margin-left: 0.52083333%;
   margin-right: 0.52083333%;
-  margin-left: 8.85416667%;
+  margin-left: 13.02083333%;
 }
 .main.has-sidebar-left,
 .region-main.has-sidebar-left {
@@ -6142,7 +6142,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
 .region-header-col-1 {
   display: inline;
   float: left;
-  width: 19.79166667%;
+  width: 11.45833333%;
   margin-left: 0.52083333%;
   margin-right: 0.52083333%;
 }
@@ -6150,7 +6150,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
 .region-header-col-2 {
   display: inline;
   float: left;
-  width: 57.29166667%;
+  width: 73.95833333%;
   margin-left: 0.52083333%;
   margin-right: 0.52083333%;
 }
@@ -6158,7 +6158,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
 .region-header-col-3 {
   display: inline;
   float: left;
-  width: 19.79166667%;
+  width: 11.45833333%;
   margin-left: 0.52083333%;
   margin-right: 0.52083333%;
 }
@@ -6500,23 +6500,42 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   border: 1px solid #6cbac4;
   color: #111;
 }
+/**
+ * Layout style for general structure of header, navbar, main, footer
+ * and other regions of the page including route specific styles.
+ */
+.outer-wrap-header {
+  border-bottom: 1px solid #222;
+}
+.rm-default a {
+  padding: 1.1em 1em;
+}
+.region-flash img {
+  display: none;
+}
+.region-flash {
+  height: 48px;
+}
 .site-logo {
   position: absolute;
   top: 40px;
   left: 40px;
 }
 .site-logo-text {
-  font-family: "Times New Roman", Times, serif;
-  padding-left: 0.2em;
+  font-family: MyriadPro-Regular, "Myriad Pro Regular", MyriadPro, 'Myriad Pro', Helvetica, Arial, sans-serif;
+  padding: 0.2em;
+  font-size: 31px;
+  line-height: 1;
+  text-shadow: 1px -1px 1px #eee;
 }
 .rm-navbar {
   text-align: center;
-  font-family: Cambria, Georgia, Times, 'Times New Roman', serif;
-  font-size: 1.5em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.3em;
   line-height: 0;
 }
 .rm-menu-button {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 .rm-desktop li ul {
   background-color: #fff;

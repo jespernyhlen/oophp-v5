@@ -1,3 +1,3 @@
-#### Footer col 2
+#### Min programmering
 
-Med brödtext i ett stycke som säger något trevligt om just detta block, eller kanske en lista av länkar.
+Sidan uppdateras stadigt och det går att följa genom [repot för me/redovisa på GitHub](https://github.com/jespernyhlen/oophp-v5).
