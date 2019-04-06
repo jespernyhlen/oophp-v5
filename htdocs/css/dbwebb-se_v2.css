@@ -4989,7 +4989,7 @@ h4:hover .header-anchor {
   text-decoration: underline;
 }
 a {
-  color: #33b;
+  color: #140741;
   text-decoration: underline;
 }
 a:visited {
@@ -5535,7 +5535,7 @@ img {
 }
 .profile .ucp a,
 .profile .login a {
-  color: #3B440D;
+  color: #666;
 }
 .profile .ucp a:hover,
 .profile .login a:hover {
@@ -5838,7 +5838,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
 }
 .rm-navbar-top .rm-desktop li.selected a,
 .rm-navbar-top .rm-desktop a:hover {
-  color: #3B440D;
+  color: #666;
   text-shadow: 0px 0px 1px #9FB129;
   text-decoration: underline;
 }
@@ -6120,7 +6120,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
  * Base
  */
 /** ==============================================================
- * Header 
+ * Header
  */
 /**
  * A header style for dbwebb.se.
@@ -6137,6 +6137,13 @@ a.rm-button.rm-clicked .rm-button-face-2 {
 }
 .inner-wrap-header .row {
   max-width: 100%;
+}
+.rm-desktop li a:hover {
+  transition: all 0.5s;
+}
+.rm-desktop li a:hover {
+  text-decoration: none;
+  background-color: #4f94cf5c;
 }
 .site-logo-text,
 .region-header-col-1 {
@@ -6226,7 +6233,6 @@ a.rm-button.rm-clicked .rm-button-face-2 {
 .site-logo-text {
   font-size: 42px;
   line-height: 1;
-  text-shadow: 2px -2px 2px #ccc;
 }
 .site-logo-text a {
   color: #333;
@@ -6234,8 +6240,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   transition: all 0.2s linear;
 }
 .site-logo-text a:hover {
-  color: #3B440D;
-  text-shadow: 2px -2px 2px #9FB129;
+  color: #666;
 }
 .site-logo-text-icon img {
   vertical-align: bottom;
@@ -6363,8 +6368,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
 .sidebar .block h4 a:hover,
 .columns-above .block h4 a:hover,
 .columns-below .block h4 a:hover {
-  color: #3B440D;
-  text-shadow: 0px 0px 1px #9FB129;
+  color: #666;
   text-decoration: underline;
 }
 /** ==============================================================
@@ -6505,16 +6509,20 @@ a.rm-button.rm-clicked .rm-button-face-2 {
  * and other regions of the page including route specific styles.
  */
 .outer-wrap-header {
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #e9e9e9;
 }
 .rm-default a {
   padding: 1.1em 1em;
 }
-.region-flash img {
-  display: none;
+.outer-wrap-flash {
+  border-bottom: 2px solid #eee;
 }
 .region-flash {
-  height: 48px;
+  height: 168px;
+}
+.toc .selected {
+  background: linear-gradient(270deg, #e6e6ff 0, #f8fcff 97%, #3e3e3e 22%);
+  padding: 0.1rem 1.5rem;
 }
 .site-logo {
   position: absolute;
@@ -6541,8 +6549,8 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   background-color: #fff;
 }
 .wrap-sidebar .block h4 {
-  border-top: 1px solid #ccc;
-  background-image: linear-gradient(to right, #fff, #ccc);
+  background: linear-gradient(270deg, #e6e6ff 0, #f8fcff 97%, #3e3e3e 22%);
+  padding: 0.1rem 1.5rem;
 }
 /**
  * My settings.
