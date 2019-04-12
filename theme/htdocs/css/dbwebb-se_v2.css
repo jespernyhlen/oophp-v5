@@ -6524,6 +6524,17 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   background: linear-gradient(270deg, #e6e6ff 0, #f8fcff 97%, #3e3e3e 22%);
   padding: 0.1rem 1.5rem;
 }
+/**
+ * Style for guess game.
+ */
+/**
+ * Style that effects guess game
+ */
+.noclick {
+  pointer-events: none;
+  color: #aaa;
+  border: 1px solid #eee;
+}
 .site-logo {
   position: absolute;
   top: 40px;

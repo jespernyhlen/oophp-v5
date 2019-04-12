@@ -10,9 +10,11 @@ class Guess
     /**
      * @var int $number   The current secret number.
      * @var int $tries    Number of tries a guess has been made.
+     * @var bool $correctAnswer    If answer is correct or not.
      */
     private $number;
     private $tries;
+    private $correctAnswer = false;
 
 
 
@@ -73,6 +75,17 @@ class Guess
     }
 
 
+    /**
+     * Check if answer is correct.
+     *
+     * @return boolean if answer is correct.
+     */
+    public function correct() : bool
+    {
+        return $this->correctAnswer;
+    }
+
+
 
     /**
      * Make a guess, decrease remaining guesses and return a string stating
@@ -90,10 +103,11 @@ class Guess
         }
 
         $this->tries -= 1;
-        if ($this->tries <= 0) {
-            $res = "No more tries! Press 'Start from beginning' to play again.";
+        if ($this->tries <= 0 && $guess !== $this->number) {
+            $res = "NOT CORRECT! You got no more tries!";
         } elseif ($guess === $this->number) {
-            $res = "CORRECT! Press 'Start from beginning' to play again.";
+            $this->correctAnswer = true;
+            $res = "CORRECT!";
         } elseif ($guess > $this->number) {
             $res = "TOO HIGH";
         } else {
