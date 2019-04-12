@@ -1,4 +1,7 @@
 <?php
+
+namespace Jen\Guess;
+
 /**
  * Guess my number, a class supporting the game through GET, POST and SESSION.
  */
@@ -74,6 +77,7 @@ class Guess
     /**
      * Make a guess, decrease remaining guesses and return a string stating
      * if the guess was correct, too low or to high or if no guesses remains.
+     * @param int $guess is the guessed number.
      *
      * @throws GuessException when guessed number is out of bounds.
      *
@@ -86,8 +90,10 @@ class Guess
         }
 
         $this->tries -= 1;
-        if ($guess === $this->number) {
-            $res = "CORRECT";
+        if ($this->tries <= 0) {
+            $res = "No more tries! Press 'Start from beginning' to play again.";
+        } elseif ($guess === $this->number) {
+            $res = "CORRECT! Press 'Start from beginning' to play again.";
         } elseif ($guess > $this->number) {
             $res = "TOO HIGH";
         } else {
