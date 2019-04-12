@@ -1,0 +1,38 @@
+body {
+    padding: 4em;
+    text-align: center;
+    height: 100vh;
+}
+
+input[type=text] {
+    margin: 0.5em;
+    height: 30px;
+    width: 50px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+input[type=submit] {
+    margin: 1em;
+    background: #2a64b763;
+    color: #000;
+    border-style: outset;
+    border: 1px solid #eee;
+    height: 50px;
+    width: 200px;
+    font-size: 1.2em;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.08);
+}
+
+input[type=submit]:hover {
+    background: #fff;
+    cursor: pointer;
+}
+
+.guess {
+    font-size: 1.8em;
+}
+
+.noclick {
+    pointer-events: none;
+}
