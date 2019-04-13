@@ -35,7 +35,7 @@ $app->router->get("guess/play", function () use ($app) {
     $_SESSION["res"] =  null;
 
     $app->page->add("guess/play", $data);
-    $app->page->add("guess/debug");
+    // $app->page->add("guess/debug");
 
     return $app->page->render([
         "title" => $title,

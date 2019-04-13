@@ -1,0 +1,39 @@
+/**
+ * Style that effects guess game
+ */
+
+@btnColor: #222;
+@bgColorBtn: linear-gradient(#29faff21, #1eb1d44d);
+@bgColorBtnHover: linear-gradient(#eee, #ddd);
+
+
+.game-container {
+    text-align: center;
+}
+
+.game-container input[type=submit] {
+    #desinax-vgrid.column(@columns / 3);
+    margin-bottom: @magicNumber;
+    margin-top: @magicNumber;
+    color: @btnColor;
+    background-color: #fff;
+    background-image: @bgColorBtn;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    font-size: @fontSizeBody;
+    padding: 0.4rem 1rem;
+    text-align: center;
+    border-radius: 0.2rem;
+}
+
+.game-container input[type=submit]:hover {
+    cursor: pointer;
+    background-image: @bgColorBtnHover;
+}
+
+.noclick {
+    pointer-events: none;
+    color: #aaa;
+    border: 1px solid #eee;
+    background-image: @bgColorBtnHover !important;
+}
