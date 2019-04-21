@@ -6525,7 +6525,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   padding: 0.1rem 1.5rem;
 }
 /**
- * Style for guess game.
+ * Style for games.
  */
 /**
  * Style that effects guess game
@@ -6560,6 +6560,33 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   color: #aaa;
   border: 1px solid #eee;
   background-image: linear-gradient(#eee, #ddd) !important;
+}
+/**
+ * Style a dice using UTF-8 characters.
+ */
+.dice-utf8 .dice-1::after {
+  content: "\2680";
+}
+.dice-utf8 .dice-2::after {
+  content: "\2681";
+}
+.dice-utf8 .dice-3::after {
+  content: "\2682";
+}
+.dice-utf8 .dice-4::after {
+  content: "\2683";
+}
+.dice-utf8 .dice-5::after {
+  content: "\2684";
+}
+.dice-utf8 .dice-6::after {
+  content: "\2685";
+}
+.dice-utf8 {
+  font-size: 60px;
+}
+.dice-utf8 i {
+  font-style: normal;
 }
 .site-logo {
   position: absolute;
