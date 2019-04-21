@@ -105,11 +105,11 @@ class DiceGame
      */
     public function gotWinner(int $firstScore, int $secondScore): bool
     {
+        $winner = false;
         if ($firstScore < 100 && $secondScore < 100) {
-            return false;
-        } elseif ($firstScore >= 100 || $secondScore >= 100) {
-            return true;
+            return $winner;
         }
+        return true;
     }
 
     /**
