@@ -50,11 +50,11 @@ $app->router->post("guess/guess_redirect", function () use ($app) {
     $_SESSION["guess"] = $_POST["guess"] ?? null;
     $res = null;
 
-    if ($_POST["doInit"]) {
+    if (isset($_POST["doInit"])) {
         return $app->response->redirect("guess/init");
-    } elseif ($_POST["doGuess"]) {
+    } elseif (isset($_POST["doGuess"])) {
         return $app->response->redirect("guess/do_guess");
-    } elseif ($_POST["doCheat"]) {
+    } elseif (isset($_POST["doCheat"])) {
         $_SESSION["doCheat"] = true;
         return $app->response->redirect("guess/play");
     }

@@ -9,19 +9,19 @@ class DiceGame
 {
     /**
      * @var player $player          Player object, representing the user.
-     * @var AI $AI                  AI object, representing computer opponent.
+     * @var computer $computer      computer object, representing computer opponent.
      * @var int $playerScore        User player score.
-     * @var int $AIScore            AI player score.
+     * @var int $computerScore      computer player score.
      * @var array $playerGraphic    Array containing strings representing dice-graphics (css classnames).
-     * @var array $AIGraphic        Array containing strings representing dice-graphics (css classnames).
+     * @var array $computerGraphic  Array containing strings representing dice-graphics (css classnames).
      * @var bool $roundFinished     Boolean to see if a round just finished.
      */
     private $player;
-    private $AI;
+    private $computer;
     private $playerScore;
-    private $AIScore;
+    private $computerScore;
     private $playerGraphic;
-    private $AIGraphic;
+    private $computerGraphic;
     private $roundFinished;
 
     /**
@@ -32,11 +32,11 @@ class DiceGame
     public function __construct(int $dices = 2)
     {
         $this->player           = new DicePlayer($dices);
-        $this->AI               = new DiceAI($dices);
+        $this->computer         = new DiceComputer($dices);
         $this->playerScore      = 0;
-        $this->AIScore          = 0;
+        $this->computerScore    = 0;
         $this->playerGraphic    = [];
-        $this->AIGraphic        = [];
+        $this->computerGraphic  = [];
         $this->roundFinished    = false;
     }
 
@@ -47,11 +47,13 @@ class DiceGame
      */
     public function startRound() : void
     {
-        $this->player->init();
-        $this->AI->init();
-        $this->playerGraphic = [];
-        $this->AIGraphic = [];
-        $this->roundFinished = false;
+        if ($this->roundFinished()) {
+            $this->player->init();
+            $this->computer->init();
+            $this->playerGraphic = [];
+            $this->computerGraphic = [];
+            $this->roundFinished = false;
+        }
     }
 
     /**
@@ -65,21 +67,21 @@ class DiceGame
         $this->player->roll();
         $diceValues = $this->player->updateScore();
         if (in_array(1, $diceValues)) {
-            $this->AIRoll();
+            $this->computerRoll();
         }
         $this->playerGraphic = $this->player->graphics();
     }
 
     /**
-     * Roll dices for AI (computer).
+     * Roll dices for computer (computer).
      * Update totalscore and graphic.
      *
      * @return void
      */
-    public function AIRoll() : void
+    public function computerRoll() : void
     {
-        $this->AI->roll();
-        $this->AIGraphic = $this->AI->graphics();
+        $this->computer->roll();
+        $this->computerGraphic = $this->computer->graphics();
         $this->updateTotal();
     }
 
@@ -89,10 +91,10 @@ class DiceGame
      *
      * @return void
      */
-    public function updateTotal() : void
+    private function updateTotal() : void
     {
         $this->playerScore += $this->player->score();
-        $this->AIScore += $this->AI->score();
+        $this->computerScore += $this->computer->score();
         $this->roundFinished = true;
     }
 
@@ -139,33 +141,23 @@ class DiceGame
     }
 
     /**
-     * Return AI object (computer player).
+     * Return computer object (computer player).
      *
-     * @return AI.
+     * @return computer.
      */
-    public function AI()
+    public function computer()
     {
-        return $this->AI;
+        return $this->computer;
     }
 
     /**
-     * Return score of player.
+     * Return array witch score of player/computer.
      *
-     * @return int.
+     * @return array
      */
-    public function playerScore()
+    public function scores() : array
     {
-        return $this->playerScore;
-    }
-
-    /**
-     * Return score of AI (computer player).
-     *
-     * @return int
-     */
-    public function AIScore()
-    {
-        return $this->AIScore;
+        return [$this->playerScore, $this->computerScore];
     }
 
     /**
@@ -173,19 +165,9 @@ class DiceGame
      *
      * @return array
      */
-    public function playerGraphic() : array
+    public function graphics() : array
     {
-        return $this->playerGraphic;
-    }
-
-    /**
-     * Return array of graphic representation of dices (classnames).
-     *
-     * @return array
-     */
-    public function AIGraphic() : array
-    {
-        return $this->AIGraphic;
+        return [$this->playerGraphic, $this->computerGraphic];
     }
 
     /**
@@ -193,7 +175,7 @@ class DiceGame
      *
      * @return bool if round is finished
      */
-    public function roundFinished() : bool
+    private function roundFinished() : bool
     {
         return $this->roundFinished;
     }

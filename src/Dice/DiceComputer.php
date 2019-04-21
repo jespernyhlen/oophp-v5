@@ -3,9 +3,9 @@
 namespace Jen\Dice;
 
 /**
- * Extended DicePlayer class to act as a AI player.
+ * Extended DicePlayer class to act as a Computer player.
  */
-class DiceAI extends DicePlayer
+class DiceComputer extends DicePlayer
 {
     /**
      * Roll dices a random amount of times - end if a dice is one.

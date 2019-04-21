@@ -24,15 +24,15 @@ namespace Anax\View;
 
     <div class="dice-player">
         <h1>COMPUTER</h1>
-        <h2 class="total-score"> <?= $AIScore ?></h2>
+        <h2 class="total-score"> <?= $computerScore ?></h2>
         <div class="round-score">
             <h2>Round pts</h2>
-            <h2><?= $AICurrentScore ?></h2>
+            <h2><?= $computerCurrentScore ?></h2>
         </div>
 
-        <?php if ($AIGraphic) : ?>
+        <?php if ($computerGraphic) : ?>
             <p class="dice-utf8">
-            <?php foreach ($AIGraphic as $value) : ?>
+            <?php foreach ($computerGraphic as $value) : ?>
                 <i class="<?= $value ?>"></i>
             <?php endforeach; ?>
             </p>

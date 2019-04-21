@@ -21,25 +21,18 @@ $app->router->get("dice/play", function () use ($app) {
     $title = "Spela först till 100";
 
     $game = $_SESSION["game"];
-    if ($game->roundFinished()) {
-        $game->startRound();
-    }
-
+    $game->startRound();
 
     $data = [
-        "playerCurrentScore" => $_SESSION["playerCurrentScore"] ?? 0,
-        "playerScore"        => $_SESSION["playerScore"] ?? 0,
-        "AICurrentScore"     => $_SESSION["AICurrentScore"] ?? 0,
-        "AIScore"            => $_SESSION["AIScore"] ?? 0,
-        "playerGraphic"      => $_SESSION["playerGraphic"] ?? null,
-        "AIGraphic"          => $_SESSION["AIGraphic"] ?? null,
-        "winMessage"         => $_SESSION["winMessage"] ?? null,
-        "noclick"            => $_SESSION["noclick"] ?? null
-
+        "playerCurrentScore"    => $_SESSION["playerCurrentScore"] ?? 0,
+        "playerScore"           => $_SESSION["playerScore"] ?? 0,
+        "computerCurrentScore"  => $_SESSION["computerCurrentScore"] ?? 0,
+        "computerScore"         => $_SESSION["computerScore"] ?? 0,
+        "playerGraphic"         => $_SESSION["playerGraphic"] ?? null,
+        "computerGraphic"       => $_SESSION["computerGraphic"] ?? null,
+        "winMessage"            => $_SESSION["winMessage"] ?? null,
+        "noclick"               => $_SESSION["noclick"] ?? null
     ];
-
-
-
 
     $_SESSION["game"] = $game;
 
@@ -89,7 +82,7 @@ $app->router->get("dice/roll", function () use ($app) {
 $app->router->get("dice/save", function () use ($app) {
     $game = $_SESSION["game"];
 
-    $game->AIRoll();
+    $game->computerRoll();
 
     return $app->response->redirect("dice/save-session");
 });
@@ -99,19 +92,21 @@ $app->router->get("dice/save", function () use ($app) {
  */
 $app->router->get("dice/save-session", function () use ($app) {
     $game = $_SESSION["game"];
+    $graphics = $game->graphics();
+    $scores = $game->scores();
 
 
-    $_SESSION["playerCurrentScore"] = $game->player()->score() ?? 0;
-    $_SESSION["playerScore"]        = $game->playerScore() ?? 0;
-    $_SESSION["AICurrentScore"]     = $game->AI()->score() ?? 0;
-    $_SESSION["AIScore"]            = $game->AIScore() ?? 0;
-    $_SESSION["playerGraphic"]      = $game->playerGraphic() ?? null;
-    $_SESSION["AIGraphic"]          = $game->AIGraphic() ?? null;
-    $_SESSION["noclick"]            = "";
+    $_SESSION["playerCurrentScore"]     = $game->player()->score() ?? 0;
+    $_SESSION["playerScore"]            = $scores[0] ?? 0;
+    $_SESSION["computerCurrentScore"]   = $game->computer()->score() ?? 0;
+    $_SESSION["computerScore"]          = $scores[1] ?? 0;
+    $_SESSION["playerGraphic"]          = $graphics[0] ?? null;
+    $_SESSION["computerGraphic"]        = $graphics[1] ?? null;
+    $_SESSION["noclick"]                = "";
 
 
-    if ($game->gotWinner($_SESSION["playerScore"], $_SESSION["AIScore"])) {
-         $_SESSION["winMessage"] = $game->showWinner($_SESSION["playerScore"], $_SESSION["AIScore"]);
+    if ($game->gotWinner($_SESSION["playerScore"], $_SESSION["computerScore"])) {
+         $_SESSION["winMessage"] = $game->showWinner($_SESSION["playerScore"], $_SESSION["computerScore"]);
          $_SESSION["noclick"] = "noclick";
     } else {
         $_SESSION["winMessage"] = null;
