@@ -1,3 +1,70 @@
+@btnColor: #222;
+@bgColorBtn: linear-gradient(#29faff21, #1eb1d44d);
+@bgColorBtnHover: linear-gradient(#eee, #ddd);
+
+.dice-container {
+    text-align: center;
+}
+
+.dice-container {
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        border-bottom: 0;
+    }
+}
+
+.dice-player {
+    #desinax-vgrid.column(@columns / 2);
+}
+
+.dice-player h1 {
+    font-weight: 100;
+}
+
+.dice-player .total-score {
+    font-size: @fontSizeH2 * 2;
+}
+
+.dice-player .round-score {
+    h2 {
+        margin: 0;
+    }
+}
+
+.dice-container input[type=submit] {
+    #desinax-vgrid.column(@columns / 3);
+    margin-bottom: @magicNumber;
+    margin-top: @magicNumber;
+    color: @btnColor;
+    background-color: #fff;
+    background-image: @bgColorBtn;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    font-size: @fontSizeBody;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.2rem;
+}
+
+.dice-container input[type=submit]:hover {
+    cursor: pointer;
+    background-image: @bgColorBtnHover;
+}
+
+.form-container {
+    #desinax-vgrid.column(@columns);
+}
+
+.noclick {
+    pointer-events: none;
+    color: #aaa;
+    border: 1px solid #eee;
+    background-image: @bgColorBtnHover !important;
+}
+
 /**
  * Style a dice using UTF-8 characters.
  */

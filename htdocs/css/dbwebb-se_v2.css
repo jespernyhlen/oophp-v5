@@ -6561,6 +6561,66 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   border: 1px solid #eee;
   background-image: linear-gradient(#eee, #ddd) !important;
 }
+.dice-container {
+  text-align: center;
+}
+.dice-container h1,
+.dice-container h2,
+.dice-container h3,
+.dice-container h4 {
+  border-bottom: 0;
+}
+.dice-player {
+  display: inline;
+  float: left;
+  width: 48.95833333%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
+.dice-player h1 {
+  font-weight: 100;
+}
+.dice-player .total-score {
+  font-size: 3.75em;
+}
+.dice-player .round-score h2 {
+  margin: 0;
+}
+.dice-container input[type=submit] {
+  display: inline;
+  float: left;
+  width: 32.29166667%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  color: #222;
+  background-color: #fff;
+  background-image: linear-gradient(#29faff21, #1eb1d44d);
+  border: 1px solid #ccc;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.2rem;
+}
+.dice-container input[type=submit]:hover {
+  cursor: pointer;
+  background-image: linear-gradient(#eee, #ddd);
+}
+.form-container {
+  display: inline;
+  float: left;
+  width: 98.95833333%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
+.noclick {
+  pointer-events: none;
+  color: #aaa;
+  border: 1px solid #eee;
+  background-image: linear-gradient(#eee, #ddd) !important;
+}
 /**
  * Style a dice using UTF-8 characters.
  */
