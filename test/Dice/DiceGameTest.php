@@ -117,11 +117,11 @@ class DiceGameTest extends TestCase
         $diceGame = new DiceGame();
 
         $res = $diceGame->showWinner(120, 50);
-        $exp = "You won, congratiulations!!";
+        $exp = "You won, congratulations!!";
         $this->assertEquals($exp, $res);
 
         $res = $diceGame->showWinner(99, 100);
-        $exp = "The computer won this game!!";
+        $exp = "Too bad, the computer won this one!!";
         $this->assertEquals($exp, $res);
 
         $res = $diceGame->showWinner(101, 102);
