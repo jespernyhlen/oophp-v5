@@ -123,9 +123,9 @@ class DiceGame
         if ($firstScore >= 100 && $secondScore >= 100) {
             $message = "Both made it to 100!";
         } elseif ($firstScore >= 100) {
-            $message = "You won, congratiulations!!";
+            $message = "You won, congratulations!!";
         } else {
-            $message = "The computer won this game!!";
+            $message = "Too bad, the computer won this one!!";
         }
         return $message;
     }
