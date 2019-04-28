@@ -31,7 +31,13 @@ $app->router->get("dice/play", function () use ($app) {
         "playerGraphic"         => $_SESSION["playerGraphic"] ?? null,
         "computerGraphic"       => $_SESSION["computerGraphic"] ?? null,
         "winMessage"            => $_SESSION["winMessage"] ?? null,
-        "noclick"               => $_SESSION["noclick"] ?? null
+        "noclick"               => $_SESSION["noclick"] ?? null,
+        "playerHistogram"       => $_SESSION["playerHistogram"] ?? null,
+        "computerHistogram"     => $_SESSION["computerHistogram"] ?? null,
+        "game"     => $_SESSION["game"] ?? null
+
+
+
     ];
 
     $_SESSION["game"] = $game;
@@ -103,6 +109,11 @@ $app->router->get("dice/save-session", function () use ($app) {
     $_SESSION["playerGraphic"]          = $graphics[0] ?? null;
     $_SESSION["computerGraphic"]        = $graphics[1] ?? null;
     $_SESSION["noclick"]                = "";
+
+    $_SESSION["playerHistogram"]        = $game->printHistogram()[0] ?? null;
+    $_SESSION["computerHistogram"]      = $game->printHistogram()[1] ?? null;
+
+
 
 
     if ($game->gotWinner($_SESSION["playerScore"], $_SESSION["computerScore"])) {

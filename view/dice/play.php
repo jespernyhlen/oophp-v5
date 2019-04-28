@@ -39,6 +39,19 @@ namespace Anax\View;
         <?php endif; ?>
     </div>
 
+    <div class="dice-player">
+        <h4>Rolled dices</h4>
+        <p><?= $playerHistogram ?></p>
+    </div>
+    <div class="dice-player">
+        <h4>Rolled dices</h4>
+        <p><?= $computerHistogram ?></p>
+    </div>
+
+
+
+
+
     <div class="form-container">
         <form method="post" action="game_redirect">
             <div class="">

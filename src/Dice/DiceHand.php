@@ -5,12 +5,14 @@ namespace Jen\Dice;
 /**
  * A dicehand holding a certain amount of dices.
  */
-class DiceHand
+ // class DiceHand
+class DiceHand implements HistogramInterface
 {
+    use HistogramTrait;
     /**
      * @var dices $dices        Array containing dices (objects).
      * @var int $diceAmount     Int representing amount of dices in this hand.
-     * @var int $values         Array containing dice values.
+     * @var array $values       Array containing dice values.
      * @var int $graphic        Array containing strings representing dice-graphics (css classnames).
      */
     private $dices;
@@ -57,6 +59,7 @@ class DiceHand
         for ($i = 0; $i < sizeof($this->dices); $i++) {
             $this->values[$i] = $this->dices[$i]->roll();
             $this->graphic[$i] = $this->dices[$i]->graphic();
+            $this->serie[] = $this->values[$i];
         }
     }
 

@@ -17,6 +17,7 @@ class DicePlayer
     protected $dices;
     protected $score;
     protected $graphics;
+
     /**
     * Constructor to initiate the diceplayer
     *
@@ -26,6 +27,7 @@ class DicePlayer
     {
         $this->dices = $dices;
         $this->init();
+        $this->diceHand = new DiceHand($this->dices);
     }
 
     /**
@@ -36,7 +38,6 @@ class DicePlayer
     public function init() : void
     {
         $this->score = 0;
-        $this->diceHand = new DiceHand($this->dices);
         $this->graphics = [];
     }
 
@@ -87,5 +88,15 @@ class DicePlayer
     public function graphics() : array
     {
         return $this->graphics;
+    }
+
+    /**
+    * Return array with current dicegraphic of player.
+    *
+    * @return object $graphics
+    */
+    public function diceHand() : object
+    {
+        return $this->diceHand;
     }
 }
