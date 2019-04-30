@@ -5,7 +5,7 @@ namespace Jen\Dice;
 /**
  * Game interface for Dice Game.
  */
- class DiceGame
+class DiceGame
 // class DiceGame implements HistogramInterface
 {
     // use HistogramTrait;
@@ -60,8 +60,6 @@ namespace Jen\Dice;
         $this->computerHistogram    = new Histogram;
 
         $this->roundFinished        = false;
-
-
     }
 
     /**
@@ -103,7 +101,6 @@ namespace Jen\Dice;
         }
         $this->playerGraphic = $this->player->graphics();
         $this->playerHistogram->injectData($this->player->diceHand());
-
     }
 
     /**
@@ -162,7 +159,6 @@ namespace Jen\Dice;
     {
         $roll = false;
         $computerScoreTotal = $this->computerScore + $this->computerRoundScore;
-        $computerBankedScore = $this->computerScore;
         $computerRoundScore = $this->computerRoundScore;
         $playerScoreTotal = $this->playerScore + $this->playerRoundScore;
 
@@ -197,20 +193,6 @@ namespace Jen\Dice;
         $this->playerScore += $this->player->score();
         $this->computerScore += $this->computer->score();
         $this->roundFinished = true;
-    }
-
-    /**
-     * Return true if a player got more then 100 points, else false.
-     *
-     * @return bool
-     */
-    public function gotWinner(int $firstScore, int $secondScore): bool
-    {
-        $winner = false;
-        if ($firstScore < 100 && $secondScore < 100) {
-            return $winner;
-        }
-        return true;
     }
 
     /**

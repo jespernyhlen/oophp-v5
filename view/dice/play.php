@@ -29,31 +29,40 @@ namespace Anax\View;
             <h2>Round pts</h2>
             <h2><?= $computerCurrentScore ?></h2>
         </div>
-
-        <?php if ($computerGraphic) : ?>
-            <p class="dice-utf8">
-            <?php foreach ($computerGraphic as $value) : ?>
-                <i class="<?= $value ?>"></i>
-            <?php endforeach; ?>
-            </p>
-        <?php endif; ?>
+        <div class="dicegraphic-container">
+            <?php if ($computerGraphic) : ?>
+                <p class="dice-utf8">
+                <?php foreach ($computerGraphic as $value) : ?>
+                    <i class="<?= $value ?>"></i>
+                <?php endforeach; ?>
+                </p>
+            <?php endif; ?>
+        </div>
     </div>
 
-    <div class="dice-player">
-        <h4>Rolled dices</h4>
-        <p><?= $playerHistogram ?></p>
+    <div class="histogram-container">
+        <div class="dice-player">
+            <?php if (strlen($playerHistogram) > 0) : ?>
+                <h4>Rolled dices</h4>
+                <p><?= $playerHistogram  ?></p>
+            <?php endif; ?>
+
+        </div>
+        <div class="dice-player">
+            <?php if (strlen($computerHistogram) > 0) : ?>
+                <h4>Rolled dices</h4>
+                <p><?= $computerHistogram  ?></p>
+            <?php endif; ?>
+        </div>
     </div>
-    <div class="dice-player">
-        <h4>Rolled dices</h4>
-        <p><?= $computerHistogram ?></p>
-    </div>
+
 
 
 
 
 
     <div class="form-container">
-        <form method="post" action="game_redirect">
+        <form method="post" action="play">
             <div class="">
                 <input hidden type="text" name="posted" value="posted">
                 <input class="" type="submit" name="initGame" value="Init">

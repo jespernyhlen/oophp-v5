@@ -120,11 +120,8 @@ class DiceGameController implements AppInjectableInterface
      */
     public function playActionPost()
     {
-        $session = $this->app->session;
         $response = $this->app->response;
         $request = $this->app->request;
-
-        $game = $session->get("game");
 
         if (null !== $request->getPost("initGame")) {
             return $response->redirect("dicegame/init");
@@ -169,7 +166,6 @@ class DiceGameController implements AppInjectableInterface
     }
 
 
-
     /**
      * Save values to session to work with.
      *
@@ -193,7 +189,7 @@ class DiceGameController implements AppInjectableInterface
         $session->set("playerHistogram", $game->printHistogram()[0]);
         $session->set("computerHistogram", $game->printHistogram()[1]);
 
-        if ($game->gotWinner($scores[0], $scores[1])) {
+        if ($scores[0] > 100 || $scores[1] > 100) {
              $message = $game->showWinner($scores[0], $scores[1]);
              $session->set("winMessage", $message);
              $session->set("noclick", "noclick");
