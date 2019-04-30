@@ -18,6 +18,7 @@
 
 .dice-player {
     #desinax-vgrid.column(@columns / 2);
+    min-height: @magicNumber * 4;
 }
 
 .dice-player h1 {
@@ -65,6 +66,14 @@
     background-image: @bgColorBtnHover !important;
 }
 
+.histogram-container {
+    #desinax-vgrid.column(@columns);
+}
+
+
+.dicegraphic-container {
+    #desinax-vgrid.column(@columns);
+}
 /**
  * Style a dice using UTF-8 characters.
  */
@@ -77,6 +86,7 @@
 
 .dice-utf8 {
     font-size: 60px;
+    min-height: @magicNumber * 5;
 }
 
 .dice-utf8 i {

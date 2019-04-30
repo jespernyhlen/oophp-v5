@@ -12,4 +12,4 @@ Om någon tärning är en etta, nollställs din total för spelrundan och det g�
 Annars har du möjlighet att kasta tärningarna igen för att addera ytterliggare poäng till spelrundan, eller spara dina intjänade poäng till dina total poäng.
 
 
-[Starta ett nytt spel!](dice/init)
+[Starta ett nytt spel!](dicegame/init)

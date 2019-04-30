@@ -6576,6 +6576,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   width: 48.95833333%;
   margin-left: 0.52083333%;
   margin-right: 0.52083333%;
+  min-height: 96px;
 }
 .dice-player h1 {
   font-weight: 100;
@@ -6621,6 +6622,20 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   border: 1px solid #eee;
   background-image: linear-gradient(#eee, #ddd) !important;
 }
+.histogram-container {
+  display: inline;
+  float: left;
+  width: 98.95833333%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
+.dicegraphic-container {
+  display: inline;
+  float: left;
+  width: 98.95833333%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
 /**
  * Style a dice using UTF-8 characters.
  */
@@ -6644,6 +6659,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
 }
 .dice-utf8 {
   font-size: 60px;
+  min-height: 120px;
 }
 .dice-utf8 i {
   font-style: normal;
