@@ -40,7 +40,6 @@ class Histogram
         return $this->serie;
     }
 
-
     /**
      * Return a string representing the histograms values
      *
@@ -57,11 +56,13 @@ class Histogram
         }
 
         for ($i = 0; $i < sizeof($histoArray); $i++) {
-            $histoString .= $i + 1 . ": ";
-            for ($k = 0; $k < $histoArray[$i]; $k++) {
-                $histoString .= "*";
+            if ($i > 0) {
+                $histoString .= $i + 1 . ": ";
+                for ($k = 0; $k < $histoArray[$i]; $k++) {
+                    $histoString .= "*";
+                }
+                $histoString .=  "<br>";
             }
-            $histoString .=  "<br>";
         }
         return $histoString;
     }

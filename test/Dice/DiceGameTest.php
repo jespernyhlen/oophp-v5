@@ -18,7 +18,7 @@ class DiceGameTest extends TestCase
         $diceGame = new DiceGame();
         $this->assertInstanceOf("\Jen\Dice\DiceGame", $diceGame);
         $this->assertInstanceOf("\Jen\Dice\DicePlayer", $diceGame->player());
-        $this->assertInstanceOf("\Jen\Dice\DiceComputer", $diceGame->computer());
+        // $this->assertInstanceOf("\Jen\Dice\DiceComputer", $diceGame->computer());
 
 
 
@@ -79,32 +79,10 @@ class DiceGameTest extends TestCase
         $exp = [[], []];
         $this->assertNotEquals($exp, $res);
 
-
         $diceGame->startRound();
 
         $res = $diceGame->graphics();
         $exp = [[], []];
-        $this->assertEquals($exp, $res);
-    }
-
-    /**
-     * Chech that we got right true return if a player got
-     * more then 100 points, else false.
-     */
-    public function testGotWinner()
-    {
-        $diceGame = new DiceGame();
-
-        $res = $diceGame->gotWinner(50, 50);
-        $exp = false;
-        $this->assertEquals($exp, $res);
-
-        $res = $diceGame->gotWinner(100, 50);
-        $exp = true;
-        $this->assertEquals($exp, $res);
-
-        $res = $diceGame->gotWinner(120, 0);
-        $exp = true;
         $this->assertEquals($exp, $res);
     }
 
@@ -127,5 +105,51 @@ class DiceGameTest extends TestCase
         $res = $diceGame->showWinner(101, 102);
         $exp = "Both made it to 100!";
         $this->assertEquals($exp, $res);
+    }
+
+    /**
+     * Construct object and verify we get new histogram print get right value
+     * when rolling the dice.
+     */
+    public function testPrintHistogram()
+    {
+        $diceGame = new DiceGame();
+
+        //First player
+        $res = $diceGame->PrintHistogram()[0];
+        $exp = "";
+        $this->assertEquals($exp, $res);
+
+        //Computer player
+        $res = $diceGame->PrintHistogram()[1];
+        $exp = "";
+        $this->assertEquals($exp, $res);
+
+        $diceGame->startRound();
+
+        //First player
+        $diceGame->playerRoll();
+        $res = $diceGame->PrintHistogram()[0];
+        $exp = 0;
+        $this->assertNotEquals($exp, strlen($res));
+        $this->assertInternalType("string", $res);
+
+        //Computer player
+        $diceGame->computerRoll();
+        $res = $diceGame->PrintHistogram()[1];
+        $exp = 0;
+        $this->assertNotEquals($exp, strlen($res));
+        $this->assertInternalType("string", $res);
+    }
+
+    /**
+     * Check that a player/computer object creates
+     *
+     */
+    public function testGetPlayer()
+    {
+        $diceGame = new DiceGame();
+        $this->assertInstanceOf("\Jen\Dice\DicePlayer", $diceGame->player());
+        $this->assertInstanceOf("\Jen\Dice\DicePlayer", $diceGame->computer());
     }
 }
