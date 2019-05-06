@@ -58,11 +58,11 @@ return [
             "url" => "dokumentation",
             "title" => "Dokumentation av ramverk och liknande.",
         ],
-        [
-            "text" => "Test &amp; Lek",
-            "url" => "lek",
-            "title" => "Testa och lek med test- och exempelprogram",
-        ],
+        // [
+        //     "text" => "Test &amp; Lek",
+        //     "url" => "lek",
+        //     "title" => "Testa och lek med test- och exempelprogram",
+        // ],
         [
             "text" => "Anax dev",
             "url" => "dev",

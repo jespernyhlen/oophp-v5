@@ -161,12 +161,10 @@ class MovieController implements AppInjectableInterface
         if (getPost("doDelete")) {
             $this->movieDelete($movieId);
             return $response->redirect("movie/select");
-
         } elseif (getPost("doAdd")) {
             $this->movieAdd();
             $movieId = $db->lastInsertId();
             return $response->redirect("movie/edit?movieId=$movieId");
-
         } elseif (getPost("doEdit") && is_numeric($movieId)) {
             return $response->redirect("movie/edit?movieId=$movieId");
         }
@@ -211,8 +209,6 @@ class MovieController implements AppInjectableInterface
      */
     public function editActionPost() : object
     {
-        $page = $this->app->page;
-
         $movieId    = getPost("movieId") ?: getGet("movieId");
         $movieTitle = getPost("movieTitle");
         $movieYear  = getPost("movieYear");
@@ -290,7 +286,6 @@ class MovieController implements AppInjectableInterface
 
         if ($searchQuery) {
             $sql = $selectQuery;
-            $search = $searchQuery;
             $res = $db->executeFetchAll($sql, $searchQuery);
         } else {
             $sql = $selectQuery;
@@ -326,7 +321,7 @@ class MovieController implements AppInjectableInterface
         $db->connect();
 
         $sql = "INSERT INTO movie (title, year, image) VALUES (?, ?, ?);";
-        $db->execute($sql, ["A title", 2017, "../image/movie/noimage.png?w=270&cf"]);
+        $db->execute($sql, ["A title", 2017, "./image/movie/noimage.png?w=270&h=180&cf"]);
     }
 
     /**
