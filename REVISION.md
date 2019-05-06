@@ -27,3 +27,10 @@ v4.0.0 (2019-04-30)
 * Tag v4.0.0 kmom04
 * Implement intelligence for computer in Dice game
 * Adding controller class for Dice game
+
+
+v5.0.0 (2019-05-06)
+--------------------
+
+* Tag v5.0.0 kmom05
+* Implement Movie database
