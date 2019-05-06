@@ -8,7 +8,8 @@
 }
 
 .rm-default a {
-    padding: 1.1em 1em;
+    font-size: 0.9em;
+    padding: 1.25em 0.7em;
 }
 
 .outer-wrap-flash {
@@ -22,4 +23,47 @@
 .toc .selected {
     background: linear-gradient(270deg,#e6e6ff 0,#f8fcff 97%,#3e3e3e 22%);
     padding: 0.1rem 1.5rem;
+}
+
+.movie-nav a {
+    text-decoration: none;
+}
+
+.movie-nav a:visited {
+    color: #000;
+}
+
+.movie-nav a:hover {
+    color: #1570b2;
+}
+
+.movie-nav a {
+    #desinax-vgrid .column(6);
+    padding-bottom: 0.8em;
+    text-align: center;
+}
+
+.movie-table {
+    border-collapse: collapse;
+}
+
+.movie-table,
+tr {
+    #desinax-vgrid.grid(1080px);
+}
+
+.movie-table tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.movie-table .first {
+    background-color: #efefef !important;
+}
+
+.movie-table th,
+.movie-table td {
+    width: 20%;
+    padding: 0.8em;
+    border: 2px solid #f8f8f8;
+    text-align: center;
 }

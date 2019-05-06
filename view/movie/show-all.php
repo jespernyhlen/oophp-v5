@@ -8,7 +8,7 @@ if (!$res) {
 ?>
 
 
-<table>
+<table class="movie-table">
     <tr class="first">
         <th>Rad</th>
         <th>Id</th>
