@@ -6525,6 +6525,13 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   background: linear-gradient(270deg, #e6e6ff 0, #f8fcff 97%, #3e3e3e 22%);
   padding: 0.1rem 1.5rem;
 }
+.movie-nav {
+  display: inline;
+  float: left;
+  width: 98.95833333%;
+  margin-left: 0.52083333%;
+  margin-right: 0.52083333%;
+}
 .movie-nav a {
   text-decoration: none;
 }
@@ -6537,7 +6544,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
 .movie-nav a {
   display: inline;
   float: left;
-  width: 23.95833333%;
+  width: 19.79166667%;
   margin-left: 0.52083333%;
   margin-right: 0.52083333%;
   padding-bottom: 0.8em;
@@ -6564,6 +6571,9 @@ tr {
   padding: 0.8em;
   border: 2px solid #f8f8f8;
   text-align: center;
+}
+pre {
+  overflow-x: scroll;
 }
 /**
  * Style for games.
