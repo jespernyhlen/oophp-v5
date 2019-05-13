@@ -88,5 +88,10 @@ return [
             "url" => "movie",
             "title" => "Movie Database",
         ],
+        [
+            "text" => "Text filter",
+            "url" => "textfilter/bbcode",
+            "title" => "Filter text",
+        ],
     ],
 ];
