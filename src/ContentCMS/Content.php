@@ -146,9 +146,9 @@ EOD;
     /**
      *  Return page based on path or slug
      *
-     * @return object consisting results from database.
+     * @return
      */
-    public function showPage($pathOrSlug) : object
+    public function showPage($pathOrSlug)
     {
         $sql = <<<EOD
     SELECT
@@ -157,15 +157,18 @@ EOD;
         DATE_FORMAT(COALESCE(updated, published), '%Y-%m-%d') AS modified
     FROM content
     WHERE
-        path = ?
-        OR slug = ?
+        (path = ?
+        OR slug = ?)
         AND type = ?
         AND (deleted IS NULL OR deleted > NOW())
         AND published <= NOW()
     ;
 EOD;
         $res = $this->contentDB->executeFetchAll($sql, [$pathOrSlug, $pathOrSlug, "page"]);
-        return $this->filterText($res)[0];
+        if ($res) {
+            return $this->filterText($res)[0];
+        }
+        return $res;
     }
 
     /**
