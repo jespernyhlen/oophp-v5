@@ -93,5 +93,10 @@ return [
             "url" => "textfilter/bbcode",
             "title" => "Filter text",
         ],
+        [
+            "text" => "Content",
+            "url" => "contentcms/show",
+            "title" => "Show all content",
+        ],
     ],
 ];
