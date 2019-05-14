@@ -4,7 +4,7 @@ if (!$res) {
 }
 ?>
 
-<table>
+<table class="movie-table">
     <tr class="first">
         <th>Id</th>
         <th>Title</th>

@@ -78,8 +78,6 @@ class TextFilterController implements AppInjectableInterface
 
         $text = file_get_contents(__DIR__ . "/clickable.txt");
         $html = $filter->parse($text, ["link"]);
-        $htmlnl2br = $filter->parse($text, ["link", "nl2br"]);
-
 
         $view[] = "textfilter/clickable";
         $data = [

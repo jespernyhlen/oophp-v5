@@ -6,7 +6,7 @@ if (!$res) {
 }
 ?>
 
-<table>
+<table class="movie-table">
     <tr class="first">
         <th>Id</th>
         <th>Title</th>
@@ -17,7 +17,6 @@ if (!$res) {
     </tr>
 <?php $id = -1; foreach ($res as $row) :
     $id++; ?>
-    <?php if ($row->status != "isDeleted") : ?>
     <tr>
         <td><?= $row->id ?></td>
         <td><a href="<?= url("contentcms/showpage/" . $row->path) ?>"><?= $row->title ?></a></td>
@@ -26,6 +25,5 @@ if (!$res) {
         <td><?= $row->published ?></td>
         <td><?= $row->deleted ?></td>
     </tr>
-    <?php endif; ?>
 <?php endforeach; ?>
 </table>
