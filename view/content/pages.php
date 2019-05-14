@@ -19,7 +19,7 @@ if (!$res) {
     $id++; ?>
     <tr>
         <td><?= $row->id ?></td>
-        <td><a href="<?= url("contentcms/showpage/" . $row->path) ?>"><?= $row->title ?></a></td>
+        <td><a href="<?= url("contentcms/showpage/" . $row->slug) ?>"><?= $row->title ?></a></td>
         <td><?= $row->type ?></td>
         <td><?= $row->status ?></td>
         <td><?= $row->published ?></td>
